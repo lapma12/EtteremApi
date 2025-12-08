@@ -7,5 +7,9 @@ namespace EtteremApi.Services.IServices
         Task<object> AddNewRendeles(AddRendelesDto addRendelesDto);
 
         Task<object> GettAllRendeles();
+
+        Task<object> GetRecordWithCard();
+        Task<object> GetAllRendelesWithFood();
+
     }
 }

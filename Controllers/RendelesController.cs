@@ -29,5 +29,15 @@ namespace EtteremApi.Controllers
         {
             return StatusCode(201, await _rendeles.GettAllRendeles());
         }
+        [HttpGet("GettAllRecordWithCard")]
+        public async Task<IActionResult> GetKartyaRendelesek()
+        {
+            return StatusCode(201,await _rendeles.GetRecordWithCard());
+        }
+        [HttpGet("GetAllRendelesWithFood")]
+        public async Task<IActionResult> GetAllRendelesWithFood()
+        {
+            return StatusCode(201,await _rendeles.GetAllRendelesWithFood());
+        }
     }
 }

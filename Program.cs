@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<RestaurantContext>();
 builder.Services.AddScoped<IRendeles, RendelesService>();
 builder.Services.AddScoped<ITermekek, TermekekService>();
+builder.Services.AddScoped<IKapcsolo, KapcsoloService>();
 
 // Add services to the container.
 

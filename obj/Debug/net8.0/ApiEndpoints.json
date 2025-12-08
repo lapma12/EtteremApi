@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "EtteremApi.Controllers.KapcsoloController",
+    "Method": "GetAllKapcsolo",
+    "RelativePath": "api/Kapcsolo/GetAllKapcsolo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EtteremApi.Controllers.RendelesController",
     "Method": "AddNewRendeles",
     "RelativePath": "api/Rendeles/AddNewRendeles",
@@ -19,6 +29,26 @@
     "ContainingType": "EtteremApi.Controllers.RendelesController",
     "Method": "GetAllRendeles",
     "RelativePath": "api/Rendeles/GetAllRendeles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EtteremApi.Controllers.RendelesController",
+    "Method": "GetAllRendelesWithFood",
+    "RelativePath": "api/Rendeles/GetAllRendelesWithFood",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EtteremApi.Controllers.RendelesController",
+    "Method": "GetKartyaRendelesek",
+    "RelativePath": "api/Rendeles/GettAllRecordWithCard",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

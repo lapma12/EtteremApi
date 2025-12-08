@@ -2,5 +2,6 @@
 {
     public interface IKapcsolo
     {
+        Task<object> GetAll();
     }
 }

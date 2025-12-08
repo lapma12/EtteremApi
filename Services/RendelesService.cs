@@ -1,6 +1,7 @@
 ﻿using EtteremApi.Models;
 using EtteremApi.Models.Dtos;
 using EtteremApi.Services.IServices;
+using Microsoft.EntityFrameworkCore;
 
 namespace EtteremApi.Services
 {
@@ -36,6 +37,56 @@ namespace EtteremApi.Services
             {
                 var result = new ResultResponseDto();
                 result.Message = ex.Message;
+                return result;
+            }
+        }
+
+        public async Task<object> GetAllRendelesWithFood()
+        {
+            try
+            {
+                var result = new ResultResponseDto();
+
+                var query =
+                    from r in _context.Rendeles
+                    join k in _context.Kapcsolos on r.Id equals k.RendelesId
+                    join t in _context.Termekeks on k.TermekekId equals t.Id
+                    select new
+                    {
+                        RendelesId = r.Id,
+                        TermekNev = t.Etel,
+                        Ar = t.Arak
+                    };
+
+                result.result = await query.ToListAsync();
+                result.Message = "Sikeres lekérdezés";
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                var result = new ResultResponseDto();
+                result.Message = ex.Message;
+                return result;
+            }
+        }
+
+        public async Task<object> GetRecordWithCard()
+        {
+            try
+            {
+                var result = new ResultResponseDto();
+                result.result =  await _context.Rendeles
+                .Where(r => r.Fizetesimod == "Kártya")
+                .Select(r => r.Id)
+                .ToListAsync();
+                result.Message = "Sikeres lekérdezés";
+                return result;
+            } 
+            catch (Exception)
+            {
+                var result = new ResultResponseDto();
+                result.Message = "Hiba a lekérdezés során";
                 return result;
             }
         }
