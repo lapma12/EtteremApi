@@ -1,0 +1,11 @@
+﻿using EtteremApi.Models.Dtos;
+
+namespace EtteremApi.Services.IServices
+{
+    public interface IRendeles
+    {
+        Task<object> AddNewRendeles(AddRendelesDto addRendelesDto);
+
+        Task<object> GettAllRendeles();
+    }
+}

@@ -1,4 +1,11 @@
+using EtteremApi.Models;
+using EtteremApi.Services;
+using EtteremApi.Services.IServices;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<RestaurantContext>();
+builder.Services.AddScoped<IRendeles, RendelesService>();
+builder.Services.AddScoped<ITermekek, TermekekService>();
 
 // Add services to the container.
 

@@ -1,23 +1,54 @@
 [
   {
-    "ContainingType": "EtteremApi.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "ContainingType": "EtteremApi.Controllers.RendelesController",
+    "Method": "AddNewRendeles",
+    "RelativePath": "api/Rendeles/AddNewRendeles",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addRendelesDto",
+        "Type": "EtteremApi.Models.Dtos.AddRendelesDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EtteremApi.Controllers.RendelesController",
+    "Method": "GetAllRendeles",
+    "RelativePath": "api/Rendeles/GetAllRendeles",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EtteremApi.Controllers.TermekController",
+    "Method": "AddNewRendeles",
+    "RelativePath": "api/Termek/AddNewTermek",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[EtteremApi.WeatherForecast, EtteremApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "addTermekDto",
+        "Type": "EtteremApi.Models.Dtos.AddTermekDto",
+        "IsRequired": true
       }
     ],
-    "EndpointName": "GetWeatherForecast"
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EtteremApi.Controllers.TermekController",
+    "Method": "GetAllRendeles",
+    "RelativePath": "api/Termek/GetAllTermek",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]
