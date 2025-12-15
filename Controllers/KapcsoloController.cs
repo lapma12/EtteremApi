@@ -1,4 +1,5 @@
-﻿using EtteremApi.Services.IServices;
+﻿using EtteremApi.Models.Dtos;
+using EtteremApi.Services.IServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,11 +14,24 @@ namespace EtteremApi.Controllers
         {
             _kapcsolo = kapcsolo;
         }
-        [HttpGet("GetAllKapcsolo")]
-        public async Task<IActionResult> GetAllKapcsolo()
+        [HttpPost("PostNewRelation")]
+        public async Task<IActionResult> PostNewRelation(AddRelationDto addRelationDto)
         {
-            return StatusCode(201, await _kapcsolo.GetAll());
+            var requestResult = await _kapcsolo.PostNewRelation(addRelationDto) as ResultResponseDto;
+            if(requestResult.result != null)
+            {
+                return Ok(requestResult);
+            }
+            else if(requestResult.result == null)
+            {
+                return NotFound(requestResult);
+            }
+            else
+            {
+                return BadRequest(requestResult);
+            }
         }
+
 
     }
 }

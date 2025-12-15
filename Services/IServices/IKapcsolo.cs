@@ -1,7 +1,9 @@
-﻿namespace EtteremApi.Services.IServices
+﻿using EtteremApi.Models.Dtos;
+
+namespace EtteremApi.Services.IServices
 {
     public interface IKapcsolo
     {
-        Task<object> GetAll();
+        Task<object> PostNewRelation(AddRelationDto addRelationDto);
     }
 }

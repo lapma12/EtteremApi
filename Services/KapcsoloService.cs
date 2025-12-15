@@ -11,29 +11,34 @@ namespace EtteremApi.Services
         {
             _context = context;
         }
-        public async Task<object> GetAll()
+        public async Task<object> PostNewRelation(AddRelationDto addRelationDto)
         {
             try
             {
                 var result = new ResultResponseDto();
-                var kapcs = _context.Kapcsolos.ToList();
-                if(kapcs != null && kapcs.Count > 0)
+                var relation = new Kapcsolo
                 {
-                    result.Message = "Sikeres lekérdezés";
-                    result.result = kapcs;
+                    RendelesId = addRelationDto.RendelesId,
+                    TermekekId = addRelationDto.TermekekId,
+                };
+                if(relation != null)
+                {
+                    await _context.Kapcsolos.AddAsync(relation);
+                    await _context.SaveChangesAsync();
+                    result.Message = "Sikeres összerendezés.";
+                    result.result = relation;
                     return result;
                 }
-                result.Message = "Nincs rekord";
-                result.result = kapcs;
+                result.Message = "Sikertelen összerendezés.";
+                result.result = relation;
                 return result;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 var result = new ResultResponseDto();
-                result.Message = "Hiba a lekérdezés során";
+                result.Message = ex.Message;
                 return result;
             }
-            
         }
     }
 }

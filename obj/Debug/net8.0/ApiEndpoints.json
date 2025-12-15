@@ -1,12 +1,18 @@
 [
   {
     "ContainingType": "EtteremApi.Controllers.KapcsoloController",
-    "Method": "GetAllKapcsolo",
-    "RelativePath": "api/Kapcsolo/GetAllKapcsolo",
-    "HttpMethod": "GET",
+    "Method": "PostNewRelation",
+    "RelativePath": "api/Kapcsolo/PostNewRelation",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "addRelationDto",
+        "Type": "EtteremApi.Models.Dtos.AddRelationDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
