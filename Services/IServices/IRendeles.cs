@@ -13,6 +13,9 @@ namespace EtteremApi.Services.IServices
 
         Task<object> GetAllRecordOrderByRendeles();
 
+        Task<object> GetJustTermekCola();
+
+        Task<object> EachRendelesCount();
 
 
     }

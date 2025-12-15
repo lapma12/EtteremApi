@@ -41,6 +41,29 @@ namespace EtteremApi.Services
             }
         }
 
+        public async Task<object> EachRendelesCount()
+        {
+            try
+            {
+                var result = new ResultResponseDto();
+                result.Message = "Sikeres lekérdezés";
+                result.result = _context.Rendeles.GroupBy(r => r.Id)
+                    .Select(g => new
+                    {
+                        RendelesId = g.Key,
+                        Count = g.Count()
+                    }).ToList();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                var result = new ResultResponseDto();
+                result.Message = ex.Message;
+                return result;
+
+            }
+        }
+
         public async Task<object> GetAllRecordOrderByRendeles()
         {
             try
@@ -89,6 +112,23 @@ namespace EtteremApi.Services
             }
         }
 
+        public async Task<object> GetJustTermekCola()
+        {
+            try
+            {
+                var result = new ResultResponseDto();
+                result.Message = "Sikeres lekérdezés";
+                result.result = _context.Termekeks.Where(t => t.Etel == "Kóla").Select(t => t.Id).ToList();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                var result = new ResultResponseDto();
+                result.Message = ex.Message;
+                return result;
+            }
+        }
+
         public async Task<object> GetRecordWithCard()
         {
             try
@@ -125,5 +165,7 @@ namespace EtteremApi.Services
                 return result;
             }
         }
+
+
     }
 }

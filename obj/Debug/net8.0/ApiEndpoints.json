@@ -33,6 +33,16 @@
   },
   {
     "ContainingType": "EtteremApi.Controllers.RendelesController",
+    "Method": "EachRendelesCount",
+    "RelativePath": "api/Rendeles/EachRendelesCount",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EtteremApi.Controllers.RendelesController",
     "Method": "GetAllRecordOrderByRendeles",
     "RelativePath": "api/Rendeles/GetAllRecordOrderByRendeles",
     "HttpMethod": "GET",
@@ -55,6 +65,16 @@
     "ContainingType": "EtteremApi.Controllers.RendelesController",
     "Method": "GetAllRendelesWithFood",
     "RelativePath": "api/Rendeles/GetAllRendelesWithFood",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EtteremApi.Controllers.RendelesController",
+    "Method": "GetJustCola",
+    "RelativePath": "api/Rendeles/GetJustTermekCola",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

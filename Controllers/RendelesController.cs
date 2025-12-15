@@ -44,5 +44,17 @@ namespace EtteremApi.Controllers
         {
             return StatusCode(201, await _rendeles.GetAllRecordOrderByRendeles());
         }
+
+        [HttpGet("GetJustTermekCola")]        
+        public async Task<IActionResult> GetJustCola()
+        {
+            return StatusCode(201, await _rendeles.GetJustTermekCola());
+        }
+
+        [HttpGet("EachRendelesCount")]
+        public async Task<IActionResult> EachRendelesCount()
+        {
+            return StatusCode(201, await _rendeles.EachRendelesCount());
+        }
     }
 }
