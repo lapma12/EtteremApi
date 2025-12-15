@@ -27,6 +27,16 @@
   },
   {
     "ContainingType": "EtteremApi.Controllers.RendelesController",
+    "Method": "GetAllRecordOrderByRendeles",
+    "RelativePath": "api/Rendeles/GetAllRecordOrderByRendeles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EtteremApi.Controllers.RendelesController",
     "Method": "GetAllRendeles",
     "RelativePath": "api/Rendeles/GetAllRendeles",
     "HttpMethod": "GET",

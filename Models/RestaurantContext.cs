@@ -21,9 +21,6 @@ public partial class RestaurantContext : DbContext
 
     public virtual DbSet<Termekek> Termekeks { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-  => optionsBuilder.UseMySQL("server=localhost;database=restaurant;user=root;password=;");
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Kapcsolo>(entity =>

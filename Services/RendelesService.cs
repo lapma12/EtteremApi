@@ -41,6 +41,24 @@ namespace EtteremApi.Services
             }
         }
 
+        public async Task<object> GetAllRecordOrderByRendeles()
+        {
+            try
+            {
+                var result = new ResultResponseDto();
+                result.Message = "Sikeres lekérdezés";
+                result.result = _context.Rendeles.OrderBy(r => r.Id).ToList();
+                return result;
+
+            }
+            catch (Exception ex)
+            {
+                var result = new ResultResponseDto();
+                result.Message = ex.Message;
+                return result;
+            }
+        }
+
         public async Task<object> GetAllRendelesWithFood()
         {
             try

@@ -11,5 +11,9 @@ namespace EtteremApi.Services.IServices
         Task<object> GetRecordWithCard();
         Task<object> GetAllRendelesWithFood();
 
+        Task<object> GetAllRecordOrderByRendeles();
+
+
+
     }
 }

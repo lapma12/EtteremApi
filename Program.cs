@@ -1,12 +1,20 @@
 using EtteremApi.Models;
 using EtteremApi.Services;
 using EtteremApi.Services.IServices;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<RestaurantContext>();
+builder.Services.AddDbContext<RestaurantContext>(
+        option => 
+        { 
+            var connectionString = builder.Configuration.GetConnectionString("MySql");
+            option.UseMySQL(connectionString);
+        }
+    );
 builder.Services.AddScoped<IRendeles, RendelesService>();
 builder.Services.AddScoped<ITermekek, TermekekService>();
 builder.Services.AddScoped<IKapcsolo, KapcsoloService>();
+
 
 // Add services to the container.
 

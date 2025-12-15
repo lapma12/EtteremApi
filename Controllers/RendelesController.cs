@@ -39,5 +39,10 @@ namespace EtteremApi.Controllers
         {
             return StatusCode(201,await _rendeles.GetAllRendelesWithFood());
         }
+        [HttpGet("GetAllRecordOrderByRendeles")]
+        public async Task<IActionResult> GetAllRecordOrderByRendeles()
+        {
+            return StatusCode(201, await _rendeles.GetAllRecordOrderByRendeles());
+        }
     }
 }
